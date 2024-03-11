@@ -14,9 +14,21 @@ Highmark's fonts
 
 ## Introduction
 
-This package contains several [Computer Modern](https://en.wikipedia.org/wiki/Computer_Modern) typefaces in Woff2 format.
+This package contains several [Computer Modern](https://en.wikipedia.org/wiki/Computer_Modern) fonts in Woff2 format. The original TTF fonts are available from [SourceForge](https://sourceforge.net/projects/cm-unicode/files/cm-unicode/0.7.0/cm-unicode-0.7.0-ttf.tar.xz/download) of all places:
 
-There is a small example application to view them.
+They can be unpacked as follows:
+
+```
+tar xzvf cm_unicode-0.7.0-pfb.tar.gz
+```
+
+To compress them all, use `woff2_compress` utility again.
+
+```
+for filename in *; do woff2_compress "${filename}"; done
+```
+
+Bear in mind that not all of the original thirty one fonts are used. Currently this package supports twenty. See the example for details.
 
 ## Installation
 
@@ -33,24 +45,6 @@ You can also clone the repository with [Git](https://git-scm.com/)...
     npm install
 
 You can also run a development server, see the section on building later on.
-
-### Computer Modern
-
-The TTF fonts are available from [SourceForge](https://sourceforge.net/projects/cm-unicode/files/cm-unicode/0.7.0/cm-unicode-0.7.0-ttf.tar.xz/download) of all places:
-
-They can be unpacked as follows:
-
-```
-tar xzvf cm_unicode-0.7.0-pfb.tar.gz
-```
-
-To compress them all, use `woff2_compress` utility again. 
-
-```
-for filename in *; do woff2_compress "${filename}"; done
-```
-
-Bear in mind that not all of the thirty one variants are used. Currently this package supports twenty. See the example for details.
 
 ## Example
 
@@ -82,7 +76,6 @@ import { computerModernStyle } from "highmark-fonts";
 const { renderStyle } = withStyle;
 
 renderStyle(computerModernStyle());
-
 ```
 
 You can pass a `host` argument to the `computerModernStyle()` function, if necessary. This will be prepended to the URLs of the font files. If you need further clarification then take a look at the source.  

@@ -14,7 +14,7 @@ Highmark's fonts
 
 ## Introduction
 
-This package contains several [Computer Modern](https://en.wikipedia.org/wiki/Computer_Modern) fonts in Woff2 format. The original TTF fonts are available from [SourceForge](https://sourceforge.net/projects/cm-unicode/files/cm-unicode/0.7.0/cm-unicode-0.7.0-ttf.tar.xz/download) of all places:
+This package contains several [Computer Modern](https://en.wikipedia.org/wiki/Computer_Modern) fonts in Woff2 format. The original TTF fonts are available from [SourceForge](https://sourceforge.net/projects/cm-unicode/files/cm-unicode/0.7.0/cm-unicode-0.7.0-ttf.tar.xz/download) of all places. Copies of the fonts that are actually utilised here can also be found in the `/ttf` directory. 
 
 They can be unpacked as follows:
 
@@ -22,7 +22,7 @@ They can be unpacked as follows:
 tar xzvf cm_unicode-0.7.0-pfb.tar.gz
 ```
 
-To compress them all, use `woff2_compress` utility again.
+To convert them all to Woff2 format, use the `woff2_compress` utility:
 
 ```
 for filename in *; do woff2_compress "${filename}"; done

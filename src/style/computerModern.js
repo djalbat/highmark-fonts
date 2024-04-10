@@ -1,8 +1,6 @@
 "use strict";
 
-import { DEFAULT_HOST } from "../defaults";
-
-const computerModernStyle = (host = DEFAULT_HOST) => `
+const computerModernStyle = `
 
   @font-face {
     src: url("${host}font/cmunrm.woff2");

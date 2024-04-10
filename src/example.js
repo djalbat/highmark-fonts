@@ -15,7 +15,7 @@ const body = new Body();
 
 renderStyles();
 
-renderStyle(computerModernStyle());
+renderStyle(computerModernStyle);
 
 body.mount(
 

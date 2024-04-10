@@ -5,13 +5,13 @@ import { pathUtilities, arrayUtilities } from "necessary";
 const { second } = arrayUtilities,
       { concatenatePaths } = pathUtilities;
 
-import { FONTS } from "./constants";
+import { FONT } from "./constants";
 
-export default function getFontsDirectoryPath() {
+export default function getFontDirectoryPath() {
   const matches = __dirname.match(/^(.+)[\/\\]lib$/), ///
         secondMatch = second(matches),
         containingDirectoryPath = secondMatch, ///
-        fontsDirectoryPath = concatenatePaths(containingDirectoryPath, FONTS);
+        fontDirectoryPath = concatenatePaths(containingDirectoryPath, FONT);
 
-  return fontsDirectoryPath;
+  return fontDirectoryPath;
 }

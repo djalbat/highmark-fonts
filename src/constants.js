@@ -1,3 +1,3 @@
 "use strict";
 
-export const FONTS = "fonts";
+export const FONT = "font";

@@ -1,7 +1,7 @@
 {
   "name": "highmark-fonts",
   "author": "James Smith",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "license": "MIT, Anti-996",
   "homepage": "https://github.com/djalbat/highmark-fonts",
   "description": "Highmark's fonts",
@@ -9,7 +9,9 @@
     "type": "git",
     "url": "https://github.com/djalbat/highmark-fonts"
   },
-  "dependencies": {},
+  "dependencies": {
+    "necessary": "^13.4.2"
+  },
   "devDependencies": {
     "@swc/core": "^1.2.50",
     "easy": "^16.0.19",

@@ -1,15 +1,17 @@
 "use strict";
 
-import { pathUtilities, packageUtilities } from "necessary";
+import { pathUtilities, arrayUtilities } from "necessary";
 
-const { getPackagePath } = packageUtilities,
+const { second } = arrayUtilities,
       { concatenatePaths } = pathUtilities;
 
 import { FONT } from "./constants";
 
 export default function getFontDirectoryPath() {
-  const packagePath = getPackagePath(__dirname),
-        fontDirectoryPath = concatenatePaths(packagePath, FONT);
+  const matches = __dirname.match(/^(.+)[\/\\]lib$/), ///
+        secondMatch = second(matches),
+        containingDirectoryPath = secondMatch, ///
+        fontDirectoryPath = concatenatePaths(containingDirectoryPath, FONT);
 
   return fontDirectoryPath;
 }

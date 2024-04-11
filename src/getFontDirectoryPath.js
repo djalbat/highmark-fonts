@@ -10,8 +10,8 @@ import { FONT } from "./constants";
 export default function getFontDirectoryPath() {
   const matches = __dirname.match(/^(.+)[\/\\]lib$/), ///
         secondMatch = second(matches),
-        containingDirectoryPath = secondMatch, ///
-        fontDirectoryPath = concatenatePaths(containingDirectoryPath, FONT);
+        packageDirectoryPath = secondMatch, ///
+        fontDirectoryPath = concatenatePaths(packageDirectoryPath, FONT);
 
   return fontDirectoryPath;
 }

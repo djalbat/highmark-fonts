@@ -15,3 +15,10 @@ export default function getFontDirectoryPath() {
 
   return fontDirectoryPath;
 }
+
+function getPackagePath() {
+  const matches = __dirname.match(/^(.+)[\/\\]lib$/), ///
+        secondMatch = second(matches),
+        containingDirectoryPath = secondMatch, ///
+
+}

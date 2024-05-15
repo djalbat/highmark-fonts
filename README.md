@@ -1,6 +1,6 @@
 # Highmark Fonts
 
-Highmark's fonts
+Highmark's fonts.
 
 ### Contents
 

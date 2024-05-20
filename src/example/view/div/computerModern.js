@@ -77,40 +77,6 @@ class ComputerModernDiv extends Element {
       <br/>,
 
       <p style={{
-        fontFamily: "Computer Modern Typewriter",
-        fontWeight: "normal",
-        fontStyle: "normal"
-      }}>
-        Computer Modern Typewriter
-      </p>,
-
-      <p style={{
-        fontFamily: "Computer Modern Typewriter",
-        fontWeight: "normal",
-        fontStyle: "italic"
-      }}>
-        Computer Modern Typewriter Italic
-      </p>,
-
-      <p style={{
-        fontFamily: "Computer Modern Typewriter",
-        fontWeight: "bold",
-        fontStyle: "normal"
-      }}>
-        Computer Modern Typewriter Bold
-      </p>,
-
-      <p style={{
-        fontFamily: "Computer Modern Typewriter",
-        fontWeight: "bold",
-        fontStyle: "italic"
-      }}>
-        Computer Modern Typewriter Bold Italic
-      </p>,
-
-      <br/>,
-
-      <p style={{
         fontFamily: "Computer Modern Bright",
         fontWeight: "normal",
         fontStyle: "normal"
@@ -174,7 +140,41 @@ class ComputerModernDiv extends Element {
         fontStyle: "italic"
       }}>
         Computer Modern Concrete Bold Italic
-      </p>
+      </p>,
+
+      <br/>,
+
+      <p style={{
+        fontFamily: "Computer Modern Typewriter",
+        fontWeight: "normal",
+        fontStyle: "normal"
+      }}>
+        Computer Modern Typewriter
+      </p>,
+
+      <p style={{
+        fontFamily: "Computer Modern Typewriter",
+        fontWeight: "normal",
+        fontStyle: "italic"
+      }}>
+        Computer Modern Typewriter Italic
+      </p>,
+
+      <p style={{
+        fontFamily: "Computer Modern Typewriter",
+        fontWeight: "bold",
+        fontStyle: "normal"
+      }}>
+        Computer Modern Typewriter Bold
+      </p>,
+
+      <p style={{
+        fontFamily: "Computer Modern Typewriter",
+        fontWeight: "bold",
+        fontStyle: "italic"
+      }}>
+        Computer Modern Typewriter Bold Italic
+      </p>,
 
     ]);
   }

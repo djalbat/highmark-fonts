@@ -59,34 +59,6 @@ const computerModernStyle = `
   }
   
   @font-face {
-    src: url("font/cmuntt.woff2");
-    font-family: "Computer Modern Typewriter";
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    src: url("font/cmunit.woff2");
-    font-family: "Computer Modern Typewriter";
-    font-weight: normal;
-    font-style: italic;
-  }
-    
-  @font-face {
-    src: url("font/cmuntb.woff2");
-    font-family: "Computer Modern Typewriter";
-    font-weight: bold;
-    font-style: normal;
-  }
-    
-  @font-face {
-    src: url("font/cmuntx.woff2");
-    font-family: "Computer Modern Typewriter";
-    font-weight: bold;
-    font-style: italic;
-  }
-      
-  @font-face {
     src: url("font/cmunbmr.woff2");
     font-family: "Computer Modern Bright";
     font-weight: normal;
@@ -142,6 +114,34 @@ const computerModernStyle = `
     font-style: italic;
   }
 
+  @font-face {
+    src: url("font/cmuntt.woff2");
+    font-family: "Computer Modern Typewriter";
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    src: url("font/cmunit.woff2");
+    font-family: "Computer Modern Typewriter";
+    font-weight: normal;
+    font-style: italic;
+  }
+    
+  @font-face {
+    src: url("font/cmuntb.woff2");
+    font-family: "Computer Modern Typewriter";
+    font-weight: bold;
+    font-style: normal;
+  }
+    
+  @font-face {
+    src: url("font/cmuntx.woff2");
+    font-family: "Computer Modern Typewriter";
+    font-weight: bold;
+    font-style: italic;
+  }
+      
 `;
 
 export default computerModernStyle;

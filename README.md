@@ -2,7 +2,7 @@
 
 Computer Modern fonts for Highmark.
 
-There are twenty fonts in total, five families each provided in regular, bold, italic and bold italic forms:
+There are twenty fonts available in total, five families each provided in regular, bold, italic and bold italic variants:
 
 - Computer Modern Serif
 - Computer Modern Sans
@@ -10,7 +10,7 @@ There are twenty fonts in total, five families each provided in regular, bold, i
 - Computer Modern Concrete
 - Computer Modern Typewriter
 
-Admittedly there are a few other families, but they are not available in all of the aforementioned forms.
+As well as these fonts this package also contains, for want of anywhere else to put it, a map of commonly used Unicode characters, with its keys and values being names and code points, respectively. It is envisaged that more Unicode characters will be added over time.
 
 ### Contents
 

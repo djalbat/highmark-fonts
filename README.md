@@ -10,7 +10,7 @@ There are twenty fonts available in total, five families each provided in regula
 - Computer Modern Concrete
 - Computer Modern Typewriter
 
-As well as these fonts this package also contains, for want of anywhere else to put it, a map of commonly used Unicode characters, with its keys and values being names and code points, respectively. It is envisaged that more Unicode characters will be added over time.
+As well as these fonts this package also contains, for want of anywhere else to put it, a map of commonly used Unicode characters, its keys and values being names and code points, respectively. It is envisaged that more characters will be added over time.
 
 ### Contents
 

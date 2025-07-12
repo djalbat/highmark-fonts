@@ -1,9 +1,10 @@
 "use strict";
 
 import { Element } from "easy";
+import { arrayUtilities } from "necessary";
 
 import GlyphsTable from "./view/table/glyphs";
-import SecondaryHeading from "./view/heading/secondary"
+import CollectionSelect from "./view/select/collection";
 
 import { shapeCharacterMap,
          angleCharacterMap,
@@ -28,18 +29,70 @@ import { shapeCharacterMap,
          doubleStruckLettersCharacterMap,
          superscriptSubscriptCharacterMap  } from "../characterMap";
 
-export default class View extends Element {
-  childElements() {
-    const parameters = parametersFromNothing(),
-          { name, title } = parameters,
-          characterMap = characterMapFromName(name);
+const { first } = arrayUtilities;
 
+const characterMapMap = {
+  shapeCharacter: shapeCharacterMap,
+  angleCharacter: angleCharacterMap,
+  arrowCharacter: arrowCharacterMap,
+  harpoonCharacter: harpoonCharacterMap,
+  equalityCharacter: equalityCharacterMap,
+  orderingCharacter: orderingCharacterMap,
+  calculusCharacter: calculusCharacterMap,
+  relationalCharacter: relationalCharacterMap,
+  arithmeticCharacter: arithmeticCharacterMap,
+  headedArrowCharacter: headedArrowCharacterMap,
+  greekLetterCharacter: greekLetterCharacterMap,
+  miscellaneousCharacter: miscellaneousCharacterMap,
+  scriptLettersCharacter: scriptLettersCharacterMap,
+  circleCircledCharacter: circleCircledCharacterMap,
+  tackTurnstileCharacter: tackTurnstileCharacterMap,
+  frakturLettersCharacter: frakturLettersCharacterMap,
+  classTheoreticCharacter: classTheoreticCharacterMap,
+  logicalOperatorCharacter: logicalOperatorCharacterMap,
+  doubleTripleArrowCharacter: doubleTripleArrowCharacterMap,
+  parenthesisBracketCharacter: parenthesisBracketCharacterMap,
+  doubleStruckLettersCharacter: doubleStruckLettersCharacterMap,
+  superscriptSubscriptCharacter: superscriptSubscriptCharacterMap
+};
+
+export default class View extends Element {
+  collectionSelectChangeHandler = (event, element) => {
+    const glyphsTable = this.getGlyphsTable();
+
+    if (glyphsTable !== null) {
+      this.unmount(glyphsTable);
+    }
+
+    const collectionSelect = element, ///
+          name = collectionSelect.getName(),
+          characterMap = characterMapMap[name],
+          glyphTable =
+
+            <GlyphsTable characterMap={characterMap} />;
+
+    this.mount(glyphTable);
+  }
+
+  getGlyphsTable() {
+    let glyphTable = null;
+
+    const glyphsTableChildElements = this.getChildElements("table.glyphs"),
+          glyphsTableChildElementsLength = glyphsTableChildElements.length;
+
+    if (glyphsTableChildElementsLength > 0) {
+      const firstGlyphsTableChildElement = first(glyphsTableChildElements);
+
+      glyphTable = firstGlyphsTableChildElement;  ///
+    }
+
+    return glyphTable;
+  }
+
+  childElements() {
     return ([
 
-      <SecondaryHeading>
-        {title}
-      </SecondaryHeading>,
-      <GlyphsTable characterMap={characterMap} />
+      <CollectionSelect onChange={this.collectionSelectChangeHandler} />
 
     ]);
   }
@@ -49,52 +102,4 @@ export default class View extends Element {
   static defaultProperties = {
     className: "view"
   };
-}
-
-function parametersFromNothing() {
-  const { search } = location,
-        start = 1,
-        queryString = search.substring(start),
-        nameValueStrings = queryString.split("&"),
-        parameters = nameValueStrings.reduce((parameters, nameValueString) => {
-          const [ name, encodedValue ] = nameValueString.split("="),
-                value = encodedValue.replace(/\+/g, " ");
-
-          parameters[name] = value;
-
-          return parameters;
-        }, {});
-
-  return parameters;
-}
-
-function characterMapFromName(name) {
-  let characterMap;
-
-  switch (name) {
-    case "shapeCharacter": characterMap = shapeCharacterMap; break;
-    case "angleCharacter": characterMap = angleCharacterMap; break;
-    case "arrowCharacter": characterMap = arrowCharacterMap; break;
-    case "harpoonCharacter": characterMap = harpoonCharacterMap; break;
-    case "equalityCharacter": characterMap = equalityCharacterMap; break;
-    case "orderingCharacter": characterMap = orderingCharacterMap; break;
-    case "calculusCharacter": characterMap = calculusCharacterMap; break;
-    case "relationalCharacter": characterMap = relationalCharacterMap; break;
-    case "arithmeticCharacter": characterMap = arithmeticCharacterMap; break;
-    case "headedArrowCharacter": characterMap = headedArrowCharacterMap; break;
-    case "greekLetterCharacter": characterMap = greekLetterCharacterMap; break;
-    case "miscellaneousCharacter": characterMap = miscellaneousCharacterMap; break;
-    case "scriptLettersCharacter": characterMap = scriptLettersCharacterMap; break;
-    case "circleCircledCharacter": characterMap = circleCircledCharacterMap; break;
-    case "tackTurnstileCharacter": characterMap = tackTurnstileCharacterMap; break;
-    case "frakturLettersCharacter": characterMap = frakturLettersCharacterMap; break;
-    case "classTheoreticCharacter": characterMap = classTheoreticCharacterMap; break;
-    case "logicalOperatorCharacter": characterMap = logicalOperatorCharacterMap; break;
-    case "doubleTripleArrowCharacter": characterMap = doubleTripleArrowCharacterMap; break;
-    case "parenthesisBracketCharacter": characterMap = parenthesisBracketCharacterMap; break;
-    case "doubleStruckLettersCharacter": characterMap = doubleStruckLettersCharacterMap; break;
-    case "superscriptSubscriptCharacter": characterMap = superscriptSubscriptCharacterMap; break;
-  }
-
-  return characterMap;
 }

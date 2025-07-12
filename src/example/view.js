@@ -4,74 +4,39 @@ import { Element } from "easy";
 import { arrayUtilities } from "necessary";
 
 import GlyphsTable from "./view/table/glyphs";
+import collectionMap from "./collectionMap";
 import CollectionSelect from "./view/select/collection";
 
-import { shapeCharacterMap,
-         angleCharacterMap,
-         arrowCharacterMap,
-         harpoonCharacterMap,
-         equalityCharacterMap,
-         orderingCharacterMap,
-         calculusCharacterMap,
-         relationalCharacterMap,
-         arithmeticCharacterMap,
-         headedArrowCharacterMap,
-         greekLetterCharacterMap,
-         miscellaneousCharacterMap,
-         scriptLettersCharacterMap,
-         circleCircledCharacterMap,
-         tackTurnstileCharacterMap,
-         frakturLettersCharacterMap,
-         classTheoreticCharacterMap,
-         logicalOperatorCharacterMap,
-         doubleTripleArrowCharacterMap,
-         parenthesisBracketCharacterMap,
-         doubleStruckLettersCharacterMap,
-         superscriptSubscriptCharacterMap  } from "../characterMap";
+import { collectionNames } from "./collectionMap";
 
 const { first } = arrayUtilities;
 
-const characterMapMap = {
-  shapeCharacter: shapeCharacterMap,
-  angleCharacter: angleCharacterMap,
-  arrowCharacter: arrowCharacterMap,
-  harpoonCharacter: harpoonCharacterMap,
-  equalityCharacter: equalityCharacterMap,
-  orderingCharacter: orderingCharacterMap,
-  calculusCharacter: calculusCharacterMap,
-  relationalCharacter: relationalCharacterMap,
-  arithmeticCharacter: arithmeticCharacterMap,
-  headedArrowCharacter: headedArrowCharacterMap,
-  greekLetterCharacter: greekLetterCharacterMap,
-  miscellaneousCharacter: miscellaneousCharacterMap,
-  scriptLettersCharacter: scriptLettersCharacterMap,
-  circleCircledCharacter: circleCircledCharacterMap,
-  tackTurnstileCharacter: tackTurnstileCharacterMap,
-  frakturLettersCharacter: frakturLettersCharacterMap,
-  classTheoreticCharacter: classTheoreticCharacterMap,
-  logicalOperatorCharacter: logicalOperatorCharacterMap,
-  doubleTripleArrowCharacter: doubleTripleArrowCharacterMap,
-  parenthesisBracketCharacter: parenthesisBracketCharacterMap,
-  doubleStruckLettersCharacter: doubleStruckLettersCharacterMap,
-  superscriptSubscriptCharacter: superscriptSubscriptCharacterMap
-};
-
 export default class View extends Element {
   collectionSelectChangeHandler = (event, element) => {
+    const collectionSelect = element, ///
+          collectionName = collectionSelect.getCollectionName();
+
+    this.unmountGlyphTable();
+
+    this.mountGlyphTable(collectionName);
+  }
+
+  mountGlyphTable(collectionName) {
+    const collection = collectionMap[collectionName],
+          { characterMap } = collection,
+          glyphTable =
+
+        <GlyphsTable characterMap={characterMap} />;
+
+    this.mount(glyphTable);
+  }
+
+  unmountGlyphTable() {
     const glyphsTable = this.getGlyphsTable();
 
     if (glyphsTable !== null) {
       this.unmount(glyphsTable);
     }
-
-    const collectionSelect = element, ///
-          name = collectionSelect.getName(),
-          characterMap = characterMapMap[name],
-          glyphTable =
-
-            <GlyphsTable characterMap={characterMap} />;
-
-    this.mount(glyphTable);
   }
 
   getGlyphsTable() {
@@ -87,6 +52,17 @@ export default class View extends Element {
     }
 
     return glyphTable;
+  }
+
+  didMount() {
+    const firstCollectionName = first(collectionNames),
+          collectionName = firstCollectionName; ///
+
+    this.mountGlyphTable(collectionName);
+  }
+
+  willUnmount() {
+    ///
   }
 
   childElements() {

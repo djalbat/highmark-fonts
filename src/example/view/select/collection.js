@@ -4,45 +4,24 @@ import withStyle from "easy-with-style";  ///
 
 import { Select } from "easy";
 
-const collectionMap = {
-  shapeCharacter: "Shapes",
-  angleCharacter: "Angles",
-  arrowCharacter: "Arrows",
-  harpoonCharacter: "Harpoons",
-  equalityCharacter: "Equality",
-  orderingCharacter: "Ordering",
-  calculusCharacter: "Calculus",
-  relationalCharacter: "Relational",
-  arithmeticCharacter: "Arithmetic",
-  headedArrowCharacter: "Headed Arrows",
-  greekLetterCharacter: "Greek Letters",
-  miscellaneousCharacter: "Miscellaneous",
-  scriptLettersCharacter: "Script Letters",
-  circleCircledCharacter: "Circles and Circled",
-  tackTurnstileCharacter: "Tacks and Turnstiles",
-  frakturLettersCharacter: "Fraktur Letters",
-  classTheoreticCharacter: "Class Theoretic",
-  logicalOperatorCharacter: "Logical Operators",
-  doubleTripleArrowCharacter: "Double and Triple Arrows",
-  parenthesisBracketCharacter: "Parentheses and brackets",
-  doubleStruckLettersCharacter: "Double Struck Letters",
-  superscriptSubscriptCharacter: "Superscripts and Subscripts"
-}
+import collectionMap from "../../collectionMap";
 
-const values = Object.keys(collectionMap),  ///
-      htmls = Object.values(collectionMap); ///
+import { collectionNames } from "../../collectionMap";
 
 class CollectionSelect extends Select {
-  getName() {
+  getCollectionName() {
     const value = this.getValue(),
-          name = value; ///
+          collectionName = value; ///
 
-    return name;
+    return collectionName;
   }
 
   childElements() {
-    const options = values.map((value, index) => {
-            const html = htmls[index];
+    const options = collectionNames.map((collectionName, index) => {
+            const collection = collectionMap[collectionName],
+                  { title } = collection,
+                  value = collectionName, ///
+                  html = title; ///
 
             return (
 
@@ -62,7 +41,7 @@ class CollectionSelect extends Select {
 
 export default withStyle(CollectionSelect)`
 
-  width: 20rem;
+  width: 32rem;
   margin: 1rem;
   border: 1px solid black;
   padding: 0.25rem;

@@ -7,15 +7,13 @@ import { CLASS_NAME, CHILD_ELEMENTS } from "../../../constants";
 
 export default class ComputerModernGlyphTableCell extends GlyphTableCell {
   childElements() {
-    const properties = {};
+    const properties = {
+      ...this.properties
+    };
 
-    for (let propertyName in this.properties) {
-      if ((propertyName !== CLASS_NAME) && (propertyName !== CHILD_ELEMENTS)) {
-        const propertyValue = this.properties[propertyName];
+    delete properties[CLASS_NAME];
 
-        properties[propertyName] = propertyValue;
-      }
-    }
+    delete properties[CHILD_ELEMENTS];
 
     return (
 

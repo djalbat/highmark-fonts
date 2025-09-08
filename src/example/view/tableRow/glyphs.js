@@ -2,6 +2,7 @@
 
 import { Element } from "easy";
 
+import JuliaMonoGlyphTableCell from "../tableCell/glyph/juliaMono";
 import UnicodeCharacterTableCell from "../tableCell/unicodeCharacter";
 import ComputerModernGlyphTableCell from "../tableCell/glyph/computerModern";
 
@@ -15,6 +16,8 @@ export default class GlyphsTableRow extends Element {
     return ([
 
       <UnicodeCharacterTableCell unicodeCharacter={unicodeCharacter} />,
+
+      <JuliaMonoGlyphTableCell codePoint={codePoint} />,
 
       <ComputerModernGlyphTableCell codePoint={codePoint} sans />,
       <ComputerModernGlyphTableCell codePoint={codePoint} sans bold />,

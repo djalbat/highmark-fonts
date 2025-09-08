@@ -8,12 +8,16 @@ import { CLASS_NAME, CHILD_ELEMENTS } from "../../../constants";
 
 class ComputerModernGlyphSpan extends GlyphSpan {
   didMount() {
-    for (let propertyName in this.properties) {
-      if ((propertyName !== CLASS_NAME) && (propertyName !== CHILD_ELEMENTS)) {
-        const className = propertyName; ///
+    const classNames = {  ///
+      ...this.properties
+    };
 
-        this.addClass(className);
-      }
+    delete classNames[CLASS_NAME];
+
+    delete classNames[CHILD_ELEMENTS];
+
+    for (var className in classNames) {
+      this.addClass(className);
     }
   }
 

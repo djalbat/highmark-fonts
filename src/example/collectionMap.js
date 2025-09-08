@@ -1,27 +1,36 @@
 "use strict";
 
-import { shapeCharacterMap,
-         angleCharacterMap,
-         arrowCharacterMap,
-         harpoonCharacterMap,
-         equalityCharacterMap,
-         orderingCharacterMap,
-         calculusCharacterMap,
-         relationalCharacterMap,
-         arithmeticCharacterMap,
-         headedArrowCharacterMap,
-         greekLetterCharacterMap,
-         miscellaneousCharacterMap,
-         scriptLettersCharacterMap,
-         circleCircledCharacterMap,
-         tackTurnstileCharacterMap,
-         frakturLettersCharacterMap,
-         classTheoreticCharacterMap,
-         logicalOperatorCharacterMap,
-         doubleTripleArrowCharacterMap,
-         parenthesisBracketCharacterMap,
-         doubleStruckLettersCharacterMap,
-         superscriptSubscriptCharacterMap } from "../characterMap";
+import {
+  shapeCharacterMap,
+  angleCharacterMap,
+  arrowCharacterMap,
+  harpoonCharacterMap,
+  equalityCharacterMap,
+  orderingCharacterMap,
+  calculusCharacterMap,
+  relationalCharacterMap,
+  arithmeticCharacterMap,
+  headedArrowCharacterMap,
+  greekLetterCharacterMap,
+  miscellaneousCharacterMap,
+  circleCircledCharacterMap,
+  tackTurnstileCharacterMap,
+  classTheoreticCharacterMap,
+  logicalOperatorCharacterMap,
+  doubleTripleArrowCharacterMap,
+  parenthesisBracketCharacterMap,
+  superscriptSubscriptCharacterMap,
+  mathematicalScriptCharacterMap,
+  mathematicalFrakturCharacterMap,
+  mathematicalMonospaceCharacterMap,
+  mathematicalDoubleStruckCharacterMap,
+  mathematicalBoldCharacterMap,
+  mathematicalItalicCharacterMap,
+  mathematicalSansSerifCharacterMap,
+  mathematicalBoldItalicCharacterMap,
+  mathematicalSansSerifBoldCharacterMap,
+  mathematicalSansSerifItalicCharacterMap,
+  mathematicalSansSerifBoldItalicCharacterMap } from "../characterMap";
 
 const collectionMap = {
   shapeCharacter: {
@@ -72,10 +81,6 @@ const collectionMap = {
     title: "Miscellaneous",
     characterMap: miscellaneousCharacterMap
   },
-  scriptLettersCharacter: {
-    title: "Script Letters",
-    characterMap: scriptLettersCharacterMap
-  },
   circleCircledCharacter: {
     title: "Circles and Circled",
     characterMap: circleCircledCharacterMap
@@ -83,10 +88,6 @@ const collectionMap = {
   tackTurnstileCharacter: {
     title: "Tacks and Turnstiles",
     characterMap: tackTurnstileCharacterMap
-  },
-  frakturLettersCharacter: {
-    title: "Fraktur Letters",
-    characterMap: frakturLettersCharacterMap
   },
   classTheoreticCharacter: {
     title: "Class Theoretic",
@@ -104,13 +105,53 @@ const collectionMap = {
     title: "Parentheses and brackets",
     characterMap: parenthesisBracketCharacterMap
   },
-  doubleStruckLettersCharacter: {
-    title: "Double Struck Letters",
-    characterMap: doubleStruckLettersCharacterMap
-  },
   superscriptSubscriptCharacter: {
     title: "Superscripts and Subscripts",
     characterMap: superscriptSubscriptCharacterMap
+  },
+  mathematicalScriptCharacter: {
+    title: "Mathematical Script",
+    characterMap: mathematicalScriptCharacterMap
+  },
+  mathematicalFrakturCharacter: {
+    title: "Mathematical Fraktur",
+    characterMap: mathematicalFrakturCharacterMap
+  },
+  mathematicalMonospaceCharacter: {
+    title: "Mathematical Monospace",
+    characterMap: mathematicalMonospaceCharacterMap
+  },
+  mathematicalDoubleStruckCharacter: {
+    title: "Mathematical Double Struck",
+    characterMap: mathematicalDoubleStruckCharacterMap
+  },
+  mathematicalBoldCharacter: {
+    title: "Mathematical Bold",
+    characterMap: mathematicalBoldCharacterMap
+  },
+  mathematicalItalicCharacter: {
+    title: "Mathematical Italic",
+    characterMap: mathematicalItalicCharacterMap
+  },
+  mathematicalSansSerifCharacter: {
+    title: "Mathematical Sans Serif",
+    characterMap: mathematicalSansSerifCharacterMap
+  },
+  mathematicalBoldItalicCharacter: {
+    title: "Mathematical Bold Italic",
+    characterMap: mathematicalBoldItalicCharacterMap
+  },
+  mathematicalSansSerifBoldCharacter: {
+    title: "Mathematical Sans Serif Bold",
+    characterMap: mathematicalSansSerifBoldCharacterMap
+  },
+  mathematicalSansSerifItalicCharacter: {
+    title: "Mathematical Sans Serif Italic",
+    characterMap: mathematicalSansSerifItalicCharacterMap
+  },
+  mathematicalSansSerifBoldItalicCharacter: {
+    title: "Mathematical Sans Serif Bold Italic",
+    characterMap: mathematicalSansSerifBoldItalicCharacterMap
   }
 };
 

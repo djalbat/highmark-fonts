@@ -9,8 +9,8 @@ import { shapes,
          calculus,
          relational,
          arithmetic,
-         headedArrows,
          greekLetters,
+         headedArrows,
          miscellaneous,
          classTheoretic,
          logicalOperators,
@@ -20,7 +20,7 @@ import { shapes,
          parenthesesAndBrackets,
          superscriptsAndSubscripts } from "../characterMap/symbolic"
 
-const symbolicCharacterMaps = {
+const symbolicCharactersMaps = {
   shapes,
   angles,
   arrows,
@@ -30,8 +30,8 @@ const symbolicCharacterMaps = {
   calculus,
   relational,
   arithmetic,
-  headedArrows,
   greekLetters,
+  headedArrows,
   miscellaneous,
   classTheoretic,
   logicalOperators,
@@ -42,4 +42,4 @@ const symbolicCharacterMaps = {
   superscriptsAndSubscripts
 };
 
-export default symbolicCharacterMaps;
+export default symbolicCharactersMaps;

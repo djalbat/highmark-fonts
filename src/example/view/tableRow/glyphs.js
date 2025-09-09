@@ -6,12 +6,10 @@ import JuliaMonoGlyphTableCell from "../tableCell/glyph/juliaMono";
 import UnicodeCharacterTableCell from "../tableCell/unicodeCharacter";
 import ComputerModernGlyphTableCell from "../tableCell/glyph/computerModern";
 
-import unicodeCharacterMap from "../../../characterMap";
-
 export default class GlyphsTableRow extends Element {
   childElements() {
-    const { unicodeCharacter } = this.properties,
-          codePoint = unicodeCharacterMap[unicodeCharacter];
+    const { charactersMap, unicodeCharacter } = this.properties,
+          codePoint = charactersMap[unicodeCharacter];
 
     return ([
 
@@ -49,6 +47,7 @@ export default class GlyphsTableRow extends Element {
   static tagName = "tr";
 
   static ignoredProperties = [
+    "charactersMap",
     "unicodeCharacter"
   ]
 

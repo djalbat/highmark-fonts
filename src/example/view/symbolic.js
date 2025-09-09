@@ -1,32 +1,32 @@
 "use strict";
 
 import { arrayUtilities } from "necessary";
+import { symbolicCharactersMaps } from "../../index"; ///
 
 import View from "../view";
 import GlyphsTable from "../view/table/glyphs";
-import collectionMap from "../collectionMap";
-import CollectionSelect from "../view/select/collection";
-
-import { collectionNames } from "../collectionMap";
+import SymbolicCharactersSelect from "./select/symbolicCharacters";
 
 const { first } = arrayUtilities;
 
 export default class SymbolicView extends View {
-  collectionSelectChangeHandler = (event, element) => {
-    const collectionSelect = element, ///
-          collectionName = collectionSelect.getCollectionName();
+  selectChangeHandler = (event, element) => {
+    const charactersSelect = element, ///
+          charactersName = charactersSelect.getCharactersName();
 
     this.unmountGlyphTable();
 
-    this.mountGlyphTable(collectionName);
+    this.mountGlyphTable(charactersName);
   }
 
-  mountGlyphTable(collectionName) {
-    const collection = collectionMap[collectionName],
-          { characterMap } = collection,
+  mountGlyphTable(charactersName) {
+    const symbolicCharactersMap = symbolicCharactersMaps[charactersName],
+          charactersMap = symbolicCharactersMap,
           glyphTable =
 
-        <GlyphsTable characterMap={characterMap} />;
+            <GlyphsTable charactersMap={charactersMap} />
+
+        ;
 
     this.mount(glyphTable);
   }
@@ -55,10 +55,12 @@ export default class SymbolicView extends View {
   }
 
   didMount() {
-    const firstCollectionName = first(collectionNames),
-          collectionName = firstCollectionName; ///
+    const charactersMaps = symbolicCharactersMaps,
+          charactersNames = Object.keys(charactersMaps),
+          firstCharactersName = first(charactersNames),
+          charactersName = firstCharactersName; ///
 
-    this.mountGlyphTable(collectionName);
+    this.mountGlyphTable(charactersName);
   }
 
   willUnmount() {
@@ -68,7 +70,7 @@ export default class SymbolicView extends View {
   childElements() {
     return ([
 
-      <CollectionSelect onChange={this.collectionSelectChangeHandler} />
+      <SymbolicCharactersSelect onChange={this.selectChangeHandler} />
 
     ]);
   }

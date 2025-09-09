@@ -26,8 +26,8 @@ The complete list is:
 - calculus
 - relational
 - arithmetic
-- headedArrows
 - greekLetters
+- headedArrows
 - miscellaneous
 - classTheoretic
 - logicalOperators

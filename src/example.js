@@ -16,6 +16,8 @@ const { renderStyle, renderStyles } = withStyle;
 const body = new Body(),
       example = window.location.search.substring(1);  ///
 
+let View;
+
 switch (example) {
   case "symbolic" : View = SymbolicView; break;
   case "alpha-numeric" : View = AlphaNumericView; break;

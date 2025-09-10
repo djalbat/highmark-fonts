@@ -56,7 +56,7 @@ The complete list is:
 Note that these blocks do not pertain to font faces. 
 They are distinct blocks of Unicode *characters*, they are not collections of glyphs.
 These blocks are important in mathematics and other forms or reasoning because they communicate *meaning*.
-A double struck capital C typically represents the complex numbers, for example, whilst a cursive capital C might represent a category.
+A double struck capital ℂ typically represents the complex numbers, for example, whilst a cursive capital 𝒞 might represent a category.
 
 ### Contents
 
@@ -115,7 +115,8 @@ If you are importing it into your own application, however, you should use the s
 
 ## Usage
 
-Copy the `font` directory to your own application. In order to make use of the fonts, the `@font-face` CSS at-rules must be added:
+Copy the `font` directory to your own application. 
+In order to make use of the fonts, the `@font-face` CSS at-rules must be added:
 
 ```
 import withStyle from "easy-with-style";
@@ -124,11 +125,34 @@ import { computerModernStyle } from "highmark-fonts";
 
 const { renderStyle } = withStyle;
 
-renderStyle(computerModernStyle());
+renderStyle(computerModernStyle);
 ```
 
-You can pass a `host` argument to the `computerModernStyle()` function, if necessary. 
-This will be prepended to the URLs of the font files. If you need further clarification then take a look at the source.
+The symbolic character maps can be imported individually or as a whole:
+
+```
+import { symbolicCharacterMap, symbolicCharacterMaps } from "highmark-fonts";
+
+let triangleCodePoint;
+
+triangleCodePoint = symbolicCharacterMap["TRIANGLE"];
+
+const shapesCharacterMap = characterMaps["shape"];
+
+triangleCodePoint = shapesCharacterMap["TRIANGLE"];
+```
+
+The value of the triangle code point will be identical in both cases.
+
+In the case of the alpha-numeric characters maps, as already mentioned the keys are just the standard Latin characters. 
+
+```
+import { alphaNumericCharacterMaps } from "highmark-fonts";
+
+const doubleStructCharacterMap = alphaNumericCharacterMaps["DoubleStruck"]; 
+
+const doubleStuckCapitalNCodePoint = doubleStructCharacterMap["N"];
+```
 
 ## Building
 

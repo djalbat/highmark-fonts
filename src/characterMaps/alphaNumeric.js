@@ -614,7 +614,7 @@ export const SansSerifBoldItalic = {
   "z": 0x1D66F
 };
 
-const alphaNumericCharactersMaps = {
+const alphaNumericCharacterMaps = {
   Script,
   Fraktur,
   Monospace,
@@ -628,4 +628,4 @@ const alphaNumericCharactersMaps = {
   SansSerifBoldItalic
 };
 
-export default alphaNumericCharactersMaps;
+export default alphaNumericCharacterMaps;

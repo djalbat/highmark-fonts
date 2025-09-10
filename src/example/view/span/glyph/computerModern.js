@@ -42,7 +42,6 @@ class ComputerModernGlyphSpan extends GlyphSpan {
 
 export default withStyle(ComputerModernGlyphSpan)`
 
-  padding: 1rem;
   font-size: 3rem;
   font-style: normal;
   font-weight: normal;

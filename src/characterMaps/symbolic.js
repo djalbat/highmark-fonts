@@ -20,7 +20,7 @@ import { shapes,
          parenthesesAndBrackets,
          superscriptsAndSubscripts } from "../characterMap/symbolic"
 
-const symbolicCharactersMaps = {
+const symbolicCharacterMaps = {
   shapes,
   angles,
   arrows,
@@ -42,4 +42,4 @@ const symbolicCharactersMaps = {
   superscriptsAndSubscripts
 };
 
-export default symbolicCharactersMaps;
+export default symbolicCharacterMaps;

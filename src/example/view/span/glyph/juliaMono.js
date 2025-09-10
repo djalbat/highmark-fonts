@@ -13,7 +13,6 @@ class JuliaMonoGlyphSpan extends GlyphSpan {
 export default withStyle(JuliaMonoGlyphSpan)`
 
   color: white;
-  padding: 1rem;
   font-size: 3rem;
   font-style: normal;
   font-weight: normal;

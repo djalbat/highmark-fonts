@@ -1,10 +1,10 @@
 "use strict";
 
-import { symbolicCharacterMaps } from "../../../index"; ///
+import { alphaNumericCharacterMaps } from "../../../index"; ///
 
 import Select from "../select";
 
-export default class SymbolicCharactersSelect extends Select {
+export default class AlphaNumericCharactersSelect extends Select {
   getCharactersName() {
     const value = this.getValue(),
           charactersName = value; ///
@@ -13,7 +13,7 @@ export default class SymbolicCharactersSelect extends Select {
   }
 
   childElements() {
-    const characterMaps = symbolicCharacterMaps,
+    const characterMaps = alphaNumericCharacterMaps,
           charactersNames = Object.keys(characterMaps),
           options = charactersNames.map((charactersName, index) => {
             const value = charactersName; ///
@@ -30,6 +30,6 @@ export default class SymbolicCharactersSelect extends Select {
   }
 
   static defaultProperties = {
-    className: "symbolicC-characters",
+    className: "alpha-numeric-characters",
   }
 }

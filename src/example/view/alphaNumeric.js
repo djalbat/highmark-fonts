@@ -1,5 +1,14 @@
 "use strict";
 
-import View from "../view";
+import { alphaNumericCharacterMaps } from "../../index"; ///
 
-export default class AlphaNumericView extends View {}
+import View from "../view";
+import AlphaNumericCharactersSelect from "./select/alphaNumericCharacters";
+
+export default class AlphaNumericView extends View {
+  static CharactersSelect = AlphaNumericCharactersSelect;
+
+  static characterMaps = alphaNumericCharacterMaps;
+
+  static showCharacter = false;
+}

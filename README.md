@@ -145,7 +145,7 @@ triangleCodePoint = shapesCharacterMap["TRIANGLE"];
 
 The value of the `triangleCodePoint` variable will be identical in both cases.
 
-In the case of the alpha-numeric characters maps, as already mentioned, the keys are just the standard Latin characters: 
+In the case of the alpha-numeric characters maps, as already mentioned, the keys are just the Latin characters: 
 
 ```
 import { alphaNumericCharacterMaps } from "highmark-fonts";

@@ -115,7 +115,6 @@ If you are importing it into your own application, however, you should use the s
 
 ## Usage
 
-Copy the `font` directory to your own application. 
 In order to make use of the fonts, the `@font-face` CSS at-rules must be added:
 
 ```
@@ -127,6 +126,8 @@ const { renderStyle } = withStyle;
 
 renderStyle(computerModernStyle);
 ```
+
+Then copy the `font` directory to your own application.
 
 The symbolic character maps can be imported individually or as a whole:
 
@@ -142,9 +143,9 @@ const shapesCharacterMap = characterMaps["shape"];
 triangleCodePoint = shapesCharacterMap["TRIANGLE"];
 ```
 
-The value of the triangle code point will be identical in both cases.
+The value of the `triangleCodePoint` variable will be identical in both cases.
 
-In the case of the alpha-numeric characters maps, as already mentioned the keys are just the standard Latin characters. 
+In the case of the alpha-numeric characters maps, as already mentioned, the keys are just the standard Latin characters: 
 
 ```
 import { alphaNumericCharacterMaps } from "highmark-fonts";

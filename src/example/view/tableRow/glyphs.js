@@ -2,6 +2,7 @@
 
 import { Element } from "easy";
 
+import CodePointTableCell from "../tableCell/codePoint";
 import CharacterTableCell from "../tableCell/character";
 import JuliaMonoGlyphTableCell from "../tableCell/glyph/juliaMono";
 import ComputerModernGlyphTableCell from "../tableCell/glyph/computerModern";
@@ -11,6 +12,8 @@ export default class GlyphsTableRow extends Element {
     const { showCharacter, characterMap, character } = this.properties,
           codePoint = characterMap[character],
           childElements = [
+
+            <CodePointTableCell codePoint={codePoint} />,
 
             <JuliaMonoGlyphTableCell codePoint={codePoint} />,
 

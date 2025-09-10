@@ -41,7 +41,7 @@ export const Script = {
   "l": 0x1D4C1,
   "m": 0x1D4C2,
   "n": 0x1D4C3,
-  "o": 0x1D4C4,
+  "o": 0x02134,
   "p": 0x1D4C5,
   "q": 0x1D4C6,
   "r": 0x1D4C7,

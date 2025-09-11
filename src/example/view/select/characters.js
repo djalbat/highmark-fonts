@@ -1,10 +1,10 @@
 "use strict";
 
-import { symbolicCharacterMaps } from "../../../index"; ///
-
 import Select from "../select";
 
-export default class SymbolicCharactersSelect extends Select {
+import { camelCaseToPlainEnglish } from "../../utilities/case";
+
+export default class CharactersSelect extends Select {
   getCharactersName() {
     const value = this.getValue(),
           charactersName = value; ///
@@ -13,14 +13,17 @@ export default class SymbolicCharactersSelect extends Select {
   }
 
   childElements() {
-    const characterMaps = symbolicCharacterMaps,
+    const { characterMaps } = this.constructor,
           charactersNames = Object.keys(characterMaps),
           options = charactersNames.map((charactersName, index) => {
-            const value = charactersName; ///
+            const camelCaseString = charactersName,
+                  plainEnglishString = camelCaseToPlainEnglish(camelCaseString),
+                  value = charactersName, ///
+                  name = plainEnglishString;  ///
 
             return (
 
-              <option value={value}>{charactersName}</option>
+              <option value={value}>{name}</option>
 
             )
           }),
@@ -30,6 +33,6 @@ export default class SymbolicCharactersSelect extends Select {
   }
 
   static defaultProperties = {
-    className: "symbolicC-characters",
+    className: "characters",
   }
 }

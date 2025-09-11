@@ -1,6 +1,6 @@
 "use strict";
 
-export const Script = {
+export const script = {
   "A": 0x1D49C,
   "B": 0x0212C,
   "C": 0x1D49E,
@@ -55,7 +55,7 @@ export const Script = {
   "z": 0x1D4CF
 };
 
-export const Fraktur = {
+export const fraktur = {
   "A": 0x1D504,
   "B": 0x1D505,
   "D": 0x1D507,
@@ -105,7 +105,7 @@ export const Fraktur = {
   "z": 0x1D537
 };
 
-export const Monospace = {
+export const monospace = {
   "A": 0x1D670,
   "B": 0x1D671,
   "C": 0x1D672,
@@ -170,7 +170,7 @@ export const Monospace = {
   "9": 0x1D7FF
 };
 
-export const DoubleStruck = {
+export const doubleStruck = {
   "A": 0x1D538,
   "B": 0x1D539,
   "C": 0x02102,
@@ -199,7 +199,7 @@ export const DoubleStruck = {
   "Z": 0x02124
 };
 
-export const SerifBold = {
+export const serifBold = {
   "A": 0x1D400,
   "B": 0x1D401,
   "C": 0x1D402,
@@ -264,7 +264,7 @@ export const SerifBold = {
   "9": 0x1D7D7
 };
 
-export const SerifItalic = {
+export const serifItalic = {
   "A": 0x1D434,
   "B": 0x1D435,
   "C": 0x1D436,
@@ -319,7 +319,7 @@ export const SerifItalic = {
   "z": 0x1D467
 };
 
-export const SerifBoldItalic = {
+export const serifBoldItalic = {
   "A": 0x1D468,
   "B": 0x1D469,
   "C": 0x1D46A,
@@ -374,7 +374,7 @@ export const SerifBoldItalic = {
   "z": 0x1D49B
 };
 
-export const SansSerif = {
+export const sansSerif = {
   "A": 0x1D5A0,
   "B": 0x1D5A1,
   "C": 0x1D5A2,
@@ -439,7 +439,7 @@ export const SansSerif = {
   "9": 0x1D7EB
 };
 
-export const SansSerifBold = {
+export const sansSerifBold = {
   "A": 0x1D5D4,
   "B": 0x1D5D5,
   "C": 0x1D5D6,
@@ -504,7 +504,7 @@ export const SansSerifBold = {
   "9": 0x1D7F5
 };
 
-export const SansSerifItalic = {
+export const sansSerifItalic = {
   "A": 0x1D608,
   "B": 0x1D609,
   "C": 0x1D60A,
@@ -559,7 +559,7 @@ export const SansSerifItalic = {
   "z": 0x1D63B
 };
 
-export const SansSerifBoldItalic = {
+export const sansSerifBoldItalic = {
   "A": 0x1D63C,
   "B": 0x1D63D,
   "C": 0x1D63E,
@@ -615,17 +615,17 @@ export const SansSerifBoldItalic = {
 };
 
 const alphaNumericCharacterMaps = {
-  Script,
-  Fraktur,
-  Monospace,
-  DoubleStruck,
-  SerifBold,
-  SerifItalic,
-  SerifBoldItalic,
-  SansSerif,
-  SansSerifBold,
-  SansSerifItalic,
-  SansSerifBoldItalic
+  script,
+  fraktur,
+  monospace,
+  doubleStruck,
+  serifBold,
+  serifItalic,
+  serifBoldItalic,
+  sansSerif,
+  sansSerifBold,
+  sansSerifItalic,
+  sansSerifBoldItalic
 };
 
 export default alphaNumericCharacterMaps;

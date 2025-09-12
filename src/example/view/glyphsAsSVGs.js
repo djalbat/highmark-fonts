@@ -6,27 +6,24 @@ import { ajaxUtilities } from "necessary";
 import View from "../view";
 
 const { get } = ajaxUtilities,
-      { characterToSVG } = svgUtilities;
+      { svgFromCodePoint } = svgUtilities;
 
 export default class GlyphsAsSVGsView extends View {
   didMount() {
-    const character = "A",
-          fontName = "cmunbbx.ttf",
+    const codePoint = 0x214b,
+          fontName = "JuliaMono-Regular.ttf",
           host = "http://localhost:8888/",
           uri = `ttf/${fontName}`,
           query = {},
           headers = {
             "accept": "font/ttf"
-          };
+          },
+          responseType = "arraybuffer";
 
-    get(host, uri, query, headers, (fontFileContent) => {
-      const SVG = characterToSVG(character, fontFileContent);
+    get(host, uri, query, headers, responseType, (arrayBuffer) => {
+      const svg = svgFromCodePoint(codePoint, arrayBuffer);
 
-      this.mount(
-
-        <SVG/>
-
-      )
+      this.mount(svg)
     });
   }
 

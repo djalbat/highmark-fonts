@@ -5,7 +5,7 @@ import "juxtapose";
 import withStyle from "easy-with-style";
 
 import { Body } from "easy";
-import { computerModernStyle } from "./index";  ///
+import { stixStyle } from "./index";  ///
 
 import juliaMonoStyle from "./example/style/juliaMono";
 import GlyphsAsSVGsView from "./example/view/glyphsAsSVGs";
@@ -27,7 +27,7 @@ switch (example) {
 
 renderStyles();
 
-renderStyle(computerModernStyle);
+renderStyle(stixStyle);
 
 renderStyle(juliaMonoStyle);
 

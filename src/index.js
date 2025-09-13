@@ -6,5 +6,5 @@ export { default as alphaNumericCharacterMaps } from "./characterMaps/alphaNumer
 
 export { default as svgUtilities } from "./utilities/svg";
 
-export { default as computerModernStyle } from "./style/computerModern";
+export { default as stixStyle } from "./style/stix";
 export { default as getFontDirectoryPath } from "./getFontDirectoryPath";

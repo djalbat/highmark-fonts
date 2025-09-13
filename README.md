@@ -1,17 +1,16 @@
 # Highmark Fonts
 
-Computer Modern Unicode fonts for Highmark.
+STIX fonts for Highmark.
 
-There are five font families available:
+https://github.com/stipub/stixfonts
 
-- Computer Modern Serif
-- Computer Modern Sans
-- Computer Modern Bright
-- Computer Modern Concrete
-- Computer Modern Typewriter
+There are five fonts available:
 
-Each family is supplied in regular, bold, italic and bold italic variants, making twenty faces in all.
-Note that there are several other CMU fonts available, however these do not come in all four variants and are therefore not included here.
+- STIX Two Math Regular
+- STIX Two Text Regular
+- STIX Two Text Bold
+- STIX Two Text Italic
+- STIX Two Text Bold Italic
 
 As well as these fonts this package also contains maps of commonly used symbolic Unicode characters. 
 The keys and values are the Unicode character names and code points, respectively.
@@ -75,7 +74,7 @@ There are several packages in the distribution.
 
 - [Highmark-CLI](https://github.com/djalbat/highmark-cli) Highmark's CLI tool.
 - [Highmark Yapp](https://github.com/djalbat/highmark-yapp) Highmark with Yapp listings.
-- [Highmark Fonts](https://github.com/djalbat/highmark-fonts) Computer Modern fonts for Highmark.
+- [Highmark Fonts](https://github.com/djalbat/highmark-fonts) STIX fonts for Highmark.
 - [Highmark Client](https://github.com/djalbat/highmark-client) Highmark's bundled client for viewing HTML.
 - [Highmark Markdown](https://github.com/djalbat/highmark-markdown) Highmark's Markdown and Markdown Style languages.
 
@@ -120,11 +119,11 @@ In order to make use of the fonts, the `@font-face` CSS at-rules must be added:
 ```
 import withStyle from "easy-with-style";
 
-import { computerModernStyle } from "highmark-fonts";
+import { stixStyle } from "highmark-fonts";
 
 const { renderStyle } = withStyle;
 
-renderStyle(computerModernStyle);
+renderStyle(stixStyle);
 ```
 
 Then copy the `font` directory to your own application.
@@ -161,12 +160,6 @@ Automation is done with [npm scripts](https://docs.npmjs.com/misc/scripts), have
 
     npm run build-debug
     npm run watch-debug
-
-## Acknowledgements
-
-* The original Unicode Computer Modern fonts were created by [Andrey V. Panov](https://scholar.google.com/citations?user=JyNVNNEAAAAJ&hl=en).
-
-* The Computer Modern CSS was adapted from Jonathan Häberle's [computer-modern-web-font](https://github.com/dreampulse/computer-modern-web-font) repository.
 
 ## Contact
 

@@ -10,8 +10,8 @@ const { get } = ajaxUtilities,
 
 export default class GlyphsAsSVGsView extends View {
   didMount() {
-    const codePoint = 0x214b,
-          fontName = "JuliaMono-Regular.ttf",
+    const codePoint = 0x1d538,
+          fontName = "STIXTwoMath-Regular.otf",
           host = "http://localhost:8888/",
           uri = `ttf/${fontName}`,
           query = {},

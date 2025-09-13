@@ -1,11 +1,11 @@
 "use strict";
 
+import StixGlyphSpan from "../../span/glyph/stix";
 import GlyphTableCell from "../../tableCell/glyph";
-import ComputerModernGlyphSpan from "../../span/glyph/computerModern";
 
 import { CLASS_NAME, CHILD_ELEMENTS } from "../../../constants";
 
-export default class ComputerModernGlyphTableCell extends GlyphTableCell {
+export default class StixGlyphTableCell extends GlyphTableCell {
   childElements() {
     const properties = {
       ...this.properties
@@ -17,12 +17,17 @@ export default class ComputerModernGlyphTableCell extends GlyphTableCell {
 
     return (
 
-      <ComputerModernGlyphSpan {...properties} />
+      <StixGlyphSpan {...properties} />
 
     );
   }
 
+  static ignoredProperties = [
+    "bold",
+    "italic"
+  ];
+
   static defaultProperties = {
-    className: "computer-modern"
+    className: "stix"
   };
 }

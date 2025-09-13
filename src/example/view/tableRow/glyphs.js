@@ -12,16 +12,9 @@ export default class GlyphsTableRow extends Element {
     const { showCharacter, characterMap, character } = this.properties,
           codePoint = characterMap[character],
           childElements = [
-
             <CodePointTableCell codePoint={codePoint} />,
-
             <JuliaMonoGlyphTableCell codePoint={codePoint} />,
-
-            <STIXGlyphTableCell codePoint={codePoint} />,
-            <STIXGlyphTableCell codePoint={codePoint} bold />,
-            <STIXGlyphTableCell codePoint={codePoint} italic />,
-            <STIXGlyphTableCell codePoint={codePoint} bold italic />,
-
+            <STIXGlyphTableCell codePoint={codePoint} />
           ];
 
     if (showCharacter) {

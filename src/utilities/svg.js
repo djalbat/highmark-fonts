@@ -1,22 +1,22 @@
 "use strict";
 
-import fontkit from "fontkit";
-
-import { Buffer } from "buffer";
+import { parse } from "opentype.js";
 
 export function svgFromCodePoint(codePoint, arrayBuffer) {
-  const buffer = Buffer.from(arrayBuffer),
-        font = fontkit.create(buffer),
-        glyph = font.glyphForCodePoint(codePoint);
+  const font = parse(arrayBuffer),
+        character = String.fromCodePoint(codePoint),
+        glyph = font.charToGlyph(character),
+        path = glyph.getPath(0, 0, 1000),
+        pathData = path.toPathData(),  ///
+        boundingBox = path.getBoundingBox();
 
-  const { path, bbox } = glyph,
-        { maxX, maxY, minX, minY } = bbox,
-        x = minX, ///
-        y = minY, ///
-        width = maxX - minX,
-        height = maxY - minY,
+  const { x1, y1, x2, y2 } = boundingBox,
+        x = x1, ///
+        y = y1, ///
+        width = x2 - x1,
+        height = y2 - y1,
         viewBox = `${x} ${y} ${width} ${height}`,
-        d = path.toSVG();
+        d = pathData; ///
 
   return (
 

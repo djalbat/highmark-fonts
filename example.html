@@ -28,26 +28,23 @@
     </style>
   </head>
   <body>
+    <script src="example.js"> </script>
+    <script>
 
-  <script src="example.js"> </script>
+      var xmlHttpRequest = new XMLHttpRequest();
 
-  <script>
-
-    var xmlHttpRequest = new XMLHttpRequest();
-
-    xmlHttpRequest.onreadystatechange = function() {
-      if (xmlHttpRequest.readyState == 4) {
-        if (xmlHttpRequest.status == 200) {
-          location.reload();
+      xmlHttpRequest.onreadystatechange = function() {
+        if (xmlHttpRequest.readyState == 4) {
+          if (xmlHttpRequest.status == 200) {
+            location.reload();
+          }
         }
-      }
-    };
+      };
 
-    xmlHttpRequest.open("GET", "/live-reload");
+      xmlHttpRequest.open("GET", "/live-reload");
 
-    xmlHttpRequest.send();
+      xmlHttpRequest.send();
 
-  </script>
-
+    </script>
   </body>
 </html>
